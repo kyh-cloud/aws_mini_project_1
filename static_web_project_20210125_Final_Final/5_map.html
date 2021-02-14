@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+	$(function() {
+		var id_check;
+		$('.mapArea li').click(function(){
+			id_check=$(this).attr('id')
+			$('.mapArea li').removeClass("active");
+			$('#'+id_check).addClass("active");
+		});
+		$('.mapArea li').click(function(){
+			id_check = $(this).attr('id');
+
+			$('.boardList').css('display','none');
+			$('#'+id_check+'-list').show();
+		});
+		$('#seoul').trigger("click");
+	});
+  </script>
+
+  <style>
+	html,body{
+	  width:100%
+	  height:100%;
+	}
+
+	container{
+	  width:100%
+	  height:100%;
+	}
+
+ /*----------------------------------------상단,메뉴------------------------------------------*/
+  #main-top {
+	background : #ffffff;
+	padding : 1rem 1rem;
+	}
+  .navbar, .dropdown-menu, #footer {
+	background : #faf0e6;
+	}
+  .nav-link, .dropdown-item {
+	font-weight : bold;
+	color : #000000;
+	}
+  #footer > * {
+	text-align : left;
+	}
+  .carousel-inner img {
+	width: 100%;
+	height: 100%;
+	}
+  #home_picture {
+	width: 100%;
+	height: 100%;
+	}
+/*----------------------------------------상단,메뉴------------------------------------------*/
+
+  .mapAll{
+ 	width:100%
+  	height:100%;
+ 	}
+  .mapArea { position: relative; margin-bottom: 40px; }
+
+  .mapArea p.map { text-align: center; }
+
+  .mapArea li {
+	display: block;
+	position: absolute;
+	left: 50%;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	color: #606060;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #8e8c8c;
+	background-color: #fff;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+  	}
+  * ul{
+	list-style:none;
+	}
+  .mapArea li{
+	cursor:pointer;
+	}
+
+  .mapArea li:hover { background-color: #e8e8e8; }
+  .mapArea li:active,li.active{ color: #fff; border-color: #616161; background-color: #616161; }
+  .mapArea li#seoul { top: 100px; margin-left: -60px; }
+  .mapArea li#jeolla { top: 330px; margin-left: -102px; }
+  .mapArea li#jeju { top: 500px; margin-left: -205px; }
+  .mapArea li#gyeonggi { top: 138px; margin-left: -150px; }
+  .mapArea li#chungcheon { top: 205px; margin-left: -87px; }
+  .mapArea li#gangwon { top: 85px; margin-left: 70px; }
+  .mapArea li#gyeongsang { top: 260px; margin-left: 20px; }
+  .mapArea li#incheon { top: 90px; margin-left: -170px;  }
+
+  p.shopTitle {
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 15px;
+	background-color: #faf0e6;
+	padding-left: 20px;
+	margin-bottom: 1px;
+	}
+  .boardList {
+	display:none;
+	}
+  .boardList table{
+	margin-top: 10px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:20%;
+	border-collapse: collapse;
+	}
+  .shopList,td,th {
+	border: #333 solid 1px;
+	border-right: none;
+	border-left:none;
+	padding : 8px;
+	}
+  .shopList th {
+	width:250px;
+	background : #999;
+	font-size : 1,1em;
+	color : #fff;
+	border-top: #333 solid 2px;
+	border-bottom:#333 solid 2px;
+	text-align:center;
+	}
+  .shopList td{
+	border-top: #333 dotted 1px;
+	border-bottom: #333 dotted 1px;
+	text-align:center;
+	}
+  .shopList tr:nth-child(2n-1) {
+	background-color: #faf0e6;
+	}
+  .shopList tr:HOVER {
+	background-color: #fc6 ;
+	cursor: pointer;
+	}
+/*----------footer----------*/
+  footer {
+    display:block;
+    padding:2% 5% 350px 5%;
+    height:100%;
+    bottom: 0;
+    background-color: #faf0e6;
+    }
+  .footerBox,.addrWrap,.siteMap{
+    position: relative;
+    }
+  .footer ul{
+    list-style:none;
+    text-align: center;
+    display:table;
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline-start: 0;
+    }
+  .footer li{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float : left;
+    }
+  .footer a{
+    vertical-align: top;
+    outline:none;
+    fount-size: 15px;
+    letter-spacing:-1px;
+    line-height:70px;
+    }
+  .footer a:link{
+    text-decoration:none;
+    color:#000000;
+    }
+  .footer a:visited{
+    text-decoration:none;
+    color:#000000;
+    }
+  #footerlogo{
+    float:left;
+    }
+  #footerlogo img{
+    width: 60%;
+    height:60%;
+    padding: 0 0 10px 0;
+    }
+  #addrWrap{
+    text-align:center;
+    float:left;
+    width:100%;
+    font-size:14px;
+    }
+  #addrWrap img{
+    width: 60px;
+    height:60px;
+    }
+/*---------footer------------*/
+  </style>
+
+</head>
+<body>
+
+ <!-- 맨 위 로고 -->
+  <div class="jumbotron text-center" id="main-top" style="margin-bottom:0">
+    <img src="images/main.png"/>
+  </div>
+
+  <!-- 메뉴 네비게이터 바 -->
+  <nav class="navbar navbar-expand-sm justify-content-center sticky-top">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="1_home.html">홈&nbsp&nbsp&nbsp</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">메뉴</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="2_0_gimbap.html">김밥</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="3_0_snack_bar.html">분식</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="4_0_dish01.html">식사</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="5_map.html">&nbsp&nbsp&nbsp지도</a>
+        </li>
+      </ul>
+  </nav>
+
+	<div class="container" style="margin-top:30px">
+		<div class="map-all">
+			<h3>매장 안내</h3>
+			<hr width="99%" color="#d3d3d3">
+			<div class="contents">
+				<div class="shopCon">
+					<div class="mapArea">
+						<p class="map"><img src="images/map.jpg" alt=""></p>
+						<ul>
+							<li id="seoul">서울지역</li>
+							<li id="jeolla">전라도</li>
+							<li id="gyeonggi">경기도</li>
+							<li id="chungcheon">충청도</li>
+							<li id="gangwon">강원도</li>
+							<li id="jeju">제주도</li>
+							<li id="gyeongsang">경상도</li>
+							<li id="incheon">인천지역</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="boardList" id="seoul-list">
+					<p class="shopTitle">· 서울지역</p>
+					<table class="shopList"  >
+						<tbody>
+						<tr>
+							<th class="name">매장명</th>
+							<th class="address">주소</th>
+							<th class="phone">전화번호</th>
+						</tr>
+						<tr class="">
+							<td class="name">엔코아 본점</td>
+							<td class="address">서울특별시 서초구 서초대로46길 42</td>
+							<td class="phone">02-754-7301</td>
+						</tr>
+						<tr class="">
+							<td class="name">플레이데이터점</td>
+							<td class="address">서울특별시 서초구 효령로 335</td>
+							<td class="phone">02-754-7302</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="boardList" id="incheon-list">
+					<p class="shopTitle">· 인천지역</p>
+					<table class="shopList"  >
+						<tbody>
+						<tr>
+							<th class="name">매장명</th>
+							<th class="address">주소</th>
+							<th class="phone">전화번호</th>
+						</tr>
+						<tr class="">
+							<td class="name">청춘수족관점</td>
+							<td class="address">인천광역시 부평구 백운로 53</td>
+							<td class="phone">010-9789-1401</td>
+						</tr>
+						<tr class="">
+							<td class="name">피쉬팜점</td>
+							<td class="address">인천광역시 남동구 용천로 106 B1</td>
+							<td class="phone">010-8433-2106</td>
+						</tr>
+						<tr class="">
+							<td class="name">인천아쿠아가든점</td>
+							<td class="address">인천 남동구 선수촌공원로 26 두플라스상가 1층</td>
+							<td class="phone">0507-1313-7188</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="boardList" id="gyeongsang-list">
+					<p class="shopTitle">· 경상도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="boardList" id="jeju-list">
+					<p class="shopTitle">· 제주도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="boardList" id="gangwon-list">
+					<p class="shopTitle">· 강원도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="boardList" id="chungcheon-list">
+					<p class="shopTitle">· 충청도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="boardList" id="gyeonggi-list">
+					<p class="shopTitle">· 경기도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="boardList" id="jeolla-list">
+					<p class="shopTitle">· 전라도지역</p>
+					<table class="shopList" >
+						<tbody>
+							<tr>
+								<th class="name">매장명</th>
+								<th class="address">주소</th>
+								<th class="phone">전화번호</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+  <!------------- footer ---------------->
+  <footer class="footer">
+      <div class="footerBox">
+          <span id="footerlogo"><a href="index.html"><img src="images/main.png" alt="로고"></a></span>
+          <div id="addrWrap">
+              <ul>
+                  <li><a href="">이용약관 |&nbsp</a></li>
+                  <li><a href="">개인정보취급방침 |&nbsp</a></li>
+                  <li><a href="">이메일주소무단수집거부 |&nbsp</a></li>
+                  <li><a href="">가맹문의</a></li>
+              </ul><br />
+              <address>서울특별시 서초구 서초동 서초대로46길 42 엔코아타워 TEL:02-754-7301 FAX:02-754-7305,
+                  <p><I>COPYRIGHT(C) 2021 ㈜엔코아. CO.LTD ALL RIGHT RESERVED.</I></p></address>
+              <ul>
+                  <li><a href="https://www.instagram.com/"><img src="images/인스타그램.png" alt="인스타그램" data-toggle="tooltip" data-placement="bottom" title="인스타그램"></a></li>
+                  <li><a href="https://ko-kr.facebook.com/"><img src="images/페이스북.png" alt="페이스북" data-toggle="tooltip" data-placement="bottom" title="페이스북"></a></li>
+                  <li><a href="https://twitter.com/?lang=ko"><img src="images/트위터.png" alt="트위터" data-toggle="tooltip" data-placement="bottom" title="트위터"></a></li>
+                  <li><a href="https://www.youtube.com/"><img src="images/유튜브.png" alt="유튜브" data-toggle="tooltip" data-placement="bottom" title="유튜브"></a></li>
+                  <li><a href="https://www.en-core.com/"><img src="images/가맹.png" alt="창업문의" data-toggle="tooltip" data-placement="bottom" title="창업문의"></a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
+  <!---------- footer ------------>
+</body>
+</html>
